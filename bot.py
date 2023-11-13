@@ -16,7 +16,7 @@ class ChatBot():
 
         self.greeting_prompt = {
             "role": "system",
-            "content": "You are a helpful assistant in Construction Industry. If the user greets you, then greet the user and ask user's specialties politely."
+            "content": "You are a helpful assistant in Construction Industry. If the user greets you, then greet the user and ask user's specialties."
         }
 
         self.specialty_prompt = {
@@ -112,7 +112,7 @@ class ChatBot():
                 )
                 self.history.append({'role': 'assistant', 'content': response.choices[0].message["content"]})
                 return response.choices[0].message["content"]
-            else:
-                self.history.append({'role': 'assistant', 'content': function_response.choices[0].message["content"]})
-                return function_response.choices[0].message['content']
+        else:
+            self.history.append({'role': 'assistant', 'content': function_response.choices[0].message["content"]})
+            return function_response.choices[0].message['content']
         

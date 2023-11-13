@@ -19,7 +19,7 @@ with gr.Blocks() as demo:
         history[-1][1] = ""
         for character in bot_message:
             history[-1][1] += character
-            time.sleep(0.02)
+            time.sleep(0.005)
             yield history
 
     msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False).then(
