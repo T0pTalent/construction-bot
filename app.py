@@ -14,8 +14,9 @@ with gr.Blocks() as demo:
         return "", history + [[user_message, None]]
 
     def bot(history):
-        print(history)
+        print(history[-1][0])
         bot_message = my_bot.run(history[-1][0])
+        print(bot_message)
         history[-1][1] = ""
         for character in bot_message:
             history[-1][1] += character
