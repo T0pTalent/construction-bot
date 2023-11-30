@@ -4,7 +4,7 @@ import time
 from bot import ChatBot
 
 my_bot = ChatBot()
-
+openai_key = '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'
 with gr.Blocks() as demo:
     chatbot = gr.Chatbot()
     msg = gr.Textbox()
